@@ -1,0 +1,478 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Accident": {
+      "title": "Accident",
+      "description": "Accidents are events where one or more vehicles are involved in collisions or in leaving the roadway. These include collisions between vehicles or with other road users or obstacles.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accidentCause": {
+          "title": "accidentCause",
+          "description": "A descriptor indicating the most significant factor causing an accident.",
+          "$ref": "DATEXII_4_Situation.json#/definitions/AccidentCauseEnumG"
+        },
+        "situationRecordCreationTime": {
+          "title": "situationRecordCreationTime",
+          "description": "The date/time that the SituationRecord object (the first version of the record) was created by the original supplier.",
+          "$ref": "DATEXII_4_Common.json#/definitions/DateTime"
+        },
+        "accidentType": {
+          "title": "accidentType",
+          "description": "A characterization of the nature of the accident.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Situation.json#/definitions/AccidentTypeEnumG"
+          },
+          "minItems": 1
+        },
+        "collisionType": {
+          "title": "collisionType",
+          "description": "Identifies a type of collision",
+          "$ref": "DATEXII_4_Situation.json#/definitions/CollisionTypeEnumG"
+        },
+        "situationRecordVersionTime": {
+          "title": "situationRecordVersionTime",
+          "description": "The date/time that this current version of the SituationRecord within the situation was written into the database of the supplier which is involved in the data exchange. Identity and version of record are defined by the class stereotype implementation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/DateTime"
+        },
+        "totalNumberOfPeopleInvolved": {
+          "title": "totalNumberOfPeopleInvolved",
+          "description": "The total number of people that are involved.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "totalNumberOfVehiclesInvolved": {
+          "title": "totalNumberOfVehiclesInvolved",
+          "description": "The total number of vehicles that are involved.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "probabilityOfOccurrence": {
+          "title": "probabilityOfOccurrence",
+          "description": "An assessment of the degree of likelihood that the reported event will occur.",
+          "$ref": "DATEXII_4_Situation.json#/definitions/ProbabilityOfOccurrenceEnumG"
+        },
+        "validity": {
+          "title": "validity",
+          "$ref": "DATEXII_4_Common.json#/definitions/Validity"
+        },
+        "locationReference": {
+          "title": "locationReference",
+          "$ref": "DATEXII_4_LocationReferencing.json#/definitions/LocationReferenceG"
+        },
+        "vehicleInvolved": {
+          "title": "vehicleInvolved",
+          "description": "The vehicle involved in the accident.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/Vehicle"
+          },
+          "minItems": 0
+        },
+        "groupOfVehiclesInvolved": {
+          "title": "groupOfVehiclesInvolved",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/GroupOfVehiclesInvolved"
+          },
+          "minItems": 0
+        },
+        "groupOfPeopleInvolved": {
+          "title": "groupOfPeopleInvolved",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Situation.json#/definitions/GroupOfPeopleInvolved"
+          },
+          "minItems": 0
+        },
+        "situationRecordExtensionG": {
+          "title": "situationRecordExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        },
+        "trafficElementExtensionG": {
+          "title": "trafficElementExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        },
+        "accidentExtensionG": {
+          "title": "accidentExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "situationRecordCreationTime",
+        "situationRecordVersionTime",
+        "probabilityOfOccurrence",
+        "accidentType",
+        "validity",
+        "locationReference"
+      ]
+    },
+    "AccidentCauseEnum": {
+      "title": "AccidentCauseEnum",
+      "description": "Collection of the type of accident causes.",
+      "type": "string",
+      "enum": [
+        "avoidanceOfObstacles",
+        "driverDistraction",
+        "driverDrugAbuse",
+        "driverIllness",
+        "exceedingSpeedsLimits",
+        "excessAlcohol",
+        "excessiveDriverTiredness",
+        "impermissibleManoeuvre",
+        "limitedVisibility",
+        "notKeepingASafeDistance",
+        "onTheWrongSideOfTheRoad",
+        "pedestrianInRoad",
+        "poorLaneAdherence",
+        "poorMergeEntryOrExitJudgement",
+        "poorRoadSurfaceCondition",
+        "poorSurfaceAdherence",
+        "undisclosed",
+        "unknown",
+        "vehicleFailure",
+        "other",
+        "extendedG"
+      ]
+    },
+    "AccidentCauseEnumG": {
+      "title": "AccidentCauseEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/AccidentCauseEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "AccidentTypeEnum": {
+      "title": "AccidentTypeEnum",
+      "description": "Collection of descriptive terms for types of accidents.",
+      "type": "string",
+      "enum": [
+        "accident",
+        "accidentInvolvingHazardousMaterials",
+        "accidentInvolvingHeavyLorries",
+        "accidentInvolvingMassTransitVehicle",
+        "accidentInvolvingPublicTransport",
+        "accidentInvolvingRadioactiveMaterial",
+        "accidentInvolvingTrain",
+        "collision",
+        "multipleVehicleAccident",
+        "secondaryAccident",
+        "seriousInjuryOrFatalAccident",
+        "vehicleStuckUnderBridge",
+        "other",
+        "extendedG"
+      ]
+    },
+    "AccidentTypeEnumG": {
+      "title": "AccidentTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/AccidentTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "CollisionTypeEnum": {
+      "title": "CollisionTypeEnum",
+      "description": "Identifies a type of collision",
+      "type": "string",
+      "enum": [
+        "collisionWithAnimal",
+        "collisionWithObstacle",
+        "collisionWithPerson",
+        "headOnCollision",
+        "headOnOrSideCollision",
+        "multipleVehicleCollision",
+        "rearCollision",
+        "sideCollision",
+        "extendedG"
+      ]
+    },
+    "CollisionTypeEnumG": {
+      "title": "CollisionTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/CollisionTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "GroupOfPeopleInvolved": {
+      "title": "GroupOfPeopleInvolved",
+      "description": "Group of people involved in the event having common characteristics and/or status.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "numberOfPeople": {
+          "title": "numberOfPeople",
+          "description": "The number of people of this group that are involved.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "injuryStatusType": {
+          "title": "injuryStatusType",
+          "description": "The injury status of the people involved.",
+          "$ref": "DATEXII_4_Situation.json#/definitions/InjuryStatusTypeEnumG"
+        },
+        "involvementRole": {
+          "title": "involvementRole",
+          "description": "The involvement role of the people.",
+          "$ref": "DATEXII_4_Situation.json#/definitions/InvolvementRolesEnumG"
+        },
+        "categoryOfPeopleInvolved": {
+          "title": "categoryOfPeopleInvolved",
+          "description": "The category of persons involved.",
+          "$ref": "DATEXII_4_Situation.json#/definitions/PersonCategoryEnumG"
+        },
+        "groupOfPeopleInvolvedExtensionG": {
+          "title": "groupOfPeopleInvolvedExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      }
+    },
+    "InjuryStatusTypeEnum": {
+      "title": "InjuryStatusTypeEnum",
+      "description": "Types of injury status of people.",
+      "type": "string",
+      "enum": [
+        "dead",
+        "injured",
+        "seriouslyInjured",
+        "slightlyInjured",
+        "uninjured",
+        "unknown",
+        "extendedG"
+      ]
+    },
+    "InjuryStatusTypeEnumG": {
+      "title": "InjuryStatusTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/InjuryStatusTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "InvolvementRolesEnum": {
+      "title": "InvolvementRolesEnum",
+      "description": "Involvement role of a person in event.",
+      "type": "string",
+      "enum": [
+        "cyclist",
+        "motorcyclist",
+        "pedestrian",
+        "unknown",
+        "vehicleDriver",
+        "vehicleOccupant",
+        "vehiclePassenger",
+        "witness",
+        "extendedG"
+      ]
+    },
+    "InvolvementRolesEnumG": {
+      "title": "InvolvementRolesEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/InvolvementRolesEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "PersonCategoryEnum": {
+      "title": "PersonCategoryEnum",
+      "description": "Categories of person.",
+      "type": "string",
+      "enum": [
+        "adult",
+        "child",
+        "emergencyServicesPerson",
+        "fireman",
+        "infant",
+        "medicalStaff",
+        "memberOfThePublic",
+        "policeman",
+        "politician",
+        "publicTransportPassenger",
+        "sickPerson",
+        "trafficOfficer",
+        "trafficWarden",
+        "veryImportantPerson",
+        "extendedG"
+      ]
+    },
+    "PersonCategoryEnumG": {
+      "title": "PersonCategoryEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/PersonCategoryEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "ProbabilityOfOccurrenceEnum": {
+      "title": "ProbabilityOfOccurrenceEnum",
+      "description": "Levels of confidence that the sender has in the information, ordered {certain, probable, risk of}.",
+      "type": "string",
+      "enum": [
+        "certain",
+        "probable",
+        "riskOf",
+        "extendedG"
+      ]
+    },
+    "ProbabilityOfOccurrenceEnumG": {
+      "title": "ProbabilityOfOccurrenceEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/ProbabilityOfOccurrenceEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "Situation": {
+      "title": "Situation",
+      "description": "An identifiable instance of a traffic/travel situation comprising one or more traffic/travel circumstances which are linked by one or more causal relationships. Each traffic/travel circumstance is represented by a Situation Record.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "idG": {
+          "type": "string"
+        },
+        "headerInformation": {
+          "title": "headerInformation",
+          "$ref": "DATEXII_4_Common.json#/definitions/HeaderInformation"
+        },
+        "situationRecord": {
+          "title": "situationRecord",
+          "description": "Details of the Situation",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Situation.json#/definitions/SituationRecordG"
+          },
+          "minItems": 1
+        },
+        "situationExtensionG": {
+          "title": "situationExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "idG",
+        "headerInformation",
+        "situationRecord"
+      ]
+    },
+    "SituationPublication": {
+      "title": "SituationPublication",
+      "description": "A publication containing zero or more traffic/travel situations.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "title": "lang",
+          "description": "The default language used throughout the payload publication.",
+          "$ref": "DATEXII_4_Common.json#/definitions/Language"
+        },
+        "publicationTime": {
+          "title": "publicationTime",
+          "description": "Date/time at which the payload publication was created.",
+          "$ref": "DATEXII_4_Common.json#/definitions/DateTime"
+        },
+        "publicationCreator": {
+          "title": "publicationCreator",
+          "$ref": "DATEXII_4_Common.json#/definitions/InternationalIdentifier"
+        },
+        "situation": {
+          "title": "situation",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Situation.json#/definitions/Situation"
+          },
+          "minItems": 0
+        },
+        "payloadPublicationExtensionG": {
+          "title": "payloadPublicationExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        },
+        "situationPublicationExtensionG": {
+          "title": "situationPublicationExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "lang",
+        "publicationTime",
+        "publicationCreator"
+      ]
+    },
+    "SituationRecordG": {
+      "title": "SituationRecordG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sitAccident": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/Accident"
+        }
+      }
+    },
+    "TrafficElementG": {
+      "title": "TrafficElementG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sitAccident": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/Accident"
+        }
+      }
+    }
+  }
+}

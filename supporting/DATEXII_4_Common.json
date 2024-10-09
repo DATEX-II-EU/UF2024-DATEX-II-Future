@@ -1,0 +1,1252 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "AxleSpacing": {
+      "title": "AxleSpacing",
+      "description": "The spacing details between the axle sets of an individual vehicle numbered from the front to the back of the vehicle. ",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "axleSpacing": {
+          "title": "axleSpacing",
+          "description": "The spacing interval, indicated by the axleSpacingSequenceIdentifier, between the axles of an individual vehicle from front to back of the vehicle. ",
+          "$ref": "DATEXII_4_Common.json#/definitions/MetresAsFloat"
+        },
+        "axleSpacingSequenceIdentifier": {
+          "title": "axleSpacingSequenceIdentifier",
+          "description": "Indicates the sequence number of the interval between the axles of the individual vehicle from front to back (e.g. 1, 2, 3...). This cannot exceed (numberOfAxles -1) if the numberOfAxles is also given as part of the VehicleCharacteristics.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "axleSpacingExtensionG": {
+          "title": "axleSpacingExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "axleSpacing",
+        "axleSpacingSequenceIdentifier"
+      ]
+    },
+    "AxleWeight": {
+      "title": "AxleWeight",
+      "description": "The weight details of a specific axle on the vehicle. ",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "axlePositionIdentifier": {
+          "title": "axlePositionIdentifier",
+          "description": "Indicates the position of the axle on the vehicle numbered from front to back (i.e. 1, 2, 3...). This cannot exceed the numberOfAxles if provided as part of VehicleCharacteristics.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "axleWeight": {
+          "title": "axleWeight",
+          "description": "The weight of the specific axle, indicated by the axleSequenceIdentifier, on the vehicle numbered from front to back of the vehicle. ",
+          "$ref": "DATEXII_4_Common.json#/definitions/Tonnes"
+        },
+        "maximumPermittedAxleWeight": {
+          "title": "maximumPermittedAxleWeight",
+          "description": "The maximum permitted weight of this specific axle on the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/Tonnes"
+        },
+        "axleWeightExtensionG": {
+          "title": "axleWeightExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "axlePositionIdentifier"
+      ]
+    },
+    "ComparisonOperatorEnum": {
+      "title": "ComparisonOperatorEnum",
+      "description": "Logical comparison operations.",
+      "type": "string",
+      "enum": [
+        "equalTo",
+        "greaterThan",
+        "greaterThanOrEqualTo",
+        "lessThan",
+        "lessThanOrEqualTo",
+        "extendedG"
+      ]
+    },
+    "ComparisonOperatorEnumG": {
+      "title": "ComparisonOperatorEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "CountryCode": {
+      "title": "CountryCode",
+      "description": "EN ISO 3166-1 alpha-2 two-letter country code",
+      "$ref": "DATEXII_4_Common.json#/definitions/String"
+    },
+    "CubicMetres": {
+      "title": "CubicMetres",
+      "description": "A volumetric measure defined in cubic metres.",
+      "$ref": "DATEXII_4_Common.json#/definitions/Float"
+    },
+    "DangerousGoodsRegulationsEnum": {
+      "title": "DangerousGoodsRegulationsEnum",
+      "description": "Types of dangerous goods regulations.",
+      "type": "string",
+      "enum": [
+        "adr",
+        "iataIcao",
+        "imoImdg",
+        "railroadDangerousGoodsBook",
+        "extendedG"
+      ]
+    },
+    "DangerousGoodsRegulationsEnumG": {
+      "title": "DangerousGoodsRegulationsEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/DangerousGoodsRegulationsEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "DateTime": {
+      "title": "DateTime",
+      "description": "A combination of integer-valued year, month, day, hour, minute properties, a decimal-valued second property and a time zone property from which it is possible to determine the local time, the equivalent UTC time and the time zone offset from UTC.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "EmissionClassificationEuroEnum": {
+      "title": "EmissionClassificationEuroEnum",
+      "description": "Classification of emission according to the Euro emission classification (based on serveral amendments on 1970 Directive 70/220/EEC). Note htat vehicleType as well as fuelType are mandatory to provide to make this classification explicit.",
+      "type": "string",
+      "enum": [
+        "euro5",
+        "euro5a",
+        "euro5b",
+        "euro6",
+        "euro6a",
+        "euro6b",
+        "euro6c",
+        "euroV",
+        "euroVI",
+        "other",
+        "extendedG"
+      ]
+    },
+    "EmissionClassificationEuroEnumG": {
+      "title": "EmissionClassificationEuroEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/EmissionClassificationEuroEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "Emissions": {
+      "title": "Emissions",
+      "description": "Emission characteristics of vehicles.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "emissionClassificationEuro": {
+          "title": "emissionClassificationEuro",
+          "description": "The minimum Euro emission classification the vehicle(s) have to comply with according to the 1970 Directive 70/220/EEC and its several amendments. Note that vehicleType and fuelType need to be provided in order to make this classification explicit.",
+          "$ref": "DATEXII_4_Common.json#/definitions/EmissionClassificationEuroEnumG"
+        },
+        "emissionClassificationOther": {
+          "title": "emissionClassificationOther",
+          "description": "Some other (probably locally defined) value(s) for emission classification.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/String"
+          },
+          "minItems": 0
+        },
+        "emissionLevel": {
+          "title": "emissionLevel",
+          "description": "The low emission level of a vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/LowEmissionLevelEnumG"
+        },
+        "emissionsExtensionG": {
+          "title": "emissionsExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      }
+    },
+    "ExtensionTypeG": {
+      "title": "ExtensionTypeG",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "Float": {
+      "title": "Float",
+      "description": "A floating point number whose value space consists of the values m × 2^e, where m is an integer whose absolute value is less than 2^24, and e is an integer between -149 and 104, inclusive.",
+      "type": "number"
+    },
+    "FuelTypeEnum": {
+      "title": "FuelTypeEnum",
+      "description": "Type of fuel used by a vehicle.",
+      "type": "string",
+      "enum": [
+        "all",
+        "battery",
+        "biodiesel",
+        "diesel",
+        "dieselBatteryHybrid",
+        "ethanol",
+        "hydrogen",
+        "liquidGas",
+        "lpg",
+        "methane",
+        "petrol",
+        "petrol95Octane",
+        "petrol98Octane",
+        "petrolBatteryHybrid",
+        "petrolLeaded",
+        "petrolUnleaded",
+        "unknown",
+        "other",
+        "extendedG"
+      ]
+    },
+    "FuelTypeEnumG": {
+      "title": "FuelTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/FuelTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "GrossWeightCharacteristic": {
+      "title": "GrossWeightCharacteristic",
+      "description": "Gross weight characteristic of a vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "grossVehicleWeight": {
+          "title": "grossVehicleWeight",
+          "description": "The gross weight of the vehicle and its load, including any trailers.",
+          "$ref": "DATEXII_4_Common.json#/definitions/Tonnes"
+        },
+        "typeOfWeight": {
+          "title": "typeOfWeight",
+          "description": "The meaning of the weight value",
+          "$ref": "DATEXII_4_Common.json#/definitions/WeightTypeEnumG"
+        },
+        "grossWeightCharacteristicExtensionG": {
+          "title": "grossWeightCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "grossVehicleWeight",
+        "typeOfWeight"
+      ]
+    },
+    "GroupOfVehiclesInvolved": {
+      "title": "GroupOfVehiclesInvolved",
+      "description": "Group of the vehicles involved having common characteristics and/or status.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "numberOfVehicles": {
+          "title": "numberOfVehicles",
+          "description": "The number of vehicles of this group that are involved.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "vehicleStatus": {
+          "title": "vehicleStatus",
+          "description": "Vehicle status.",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleStatusEnumG"
+        },
+        "vehicleCharacteristics": {
+          "title": "vehicleCharacteristics",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleCharacteristics"
+        },
+        "groupOfVehiclesInvolvedExtensionG": {
+          "title": "groupOfVehiclesInvolvedExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      }
+    },
+    "HazardousMaterials": {
+      "title": "HazardousMaterials",
+      "description": "Details of hazardous materials.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chemicalName": {
+          "title": "chemicalName",
+          "description": "The chemical name of the hazardous substance carried by the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/MultilingualString"
+        },
+        "dangerousGoodsFlashPoint": {
+          "title": "dangerousGoodsFlashPoint",
+          "description": "The temperature at which the vapour from a hazardous substance will ignite in air.",
+          "$ref": "DATEXII_4_Common.json#/definitions/TemperatureCelsius"
+        },
+        "dangerousGoodsRegulations": {
+          "title": "dangerousGoodsRegulations",
+          "description": "The code defining the regulations, international or national, applicable for a means of transport.",
+          "$ref": "DATEXII_4_Common.json#/definitions/DangerousGoodsRegulationsEnumG"
+        },
+        "hazardCodeIdentification": {
+          "title": "hazardCodeIdentification",
+          "description": "The dangerous goods description code.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "hazardCodeVersionNumber": {
+          "title": "hazardCodeVersionNumber",
+          "description": "The version/revision number of date of issuance of the hazardous material code used.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "hazardSubstanceItemPageNumber": {
+          "title": "hazardSubstanceItemPageNumber",
+          "description": "A number giving additional hazard code classification of a goods item within the applicable dangerous goods regulation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "tremCardNumber": {
+          "title": "tremCardNumber",
+          "description": "The identification of a transport emergency card giving advice for emergency actions.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "undgNumber": {
+          "title": "undgNumber",
+          "description": "A unique serial number assigned within the United Nations to substances and articles contained in a list of the dangerous goods most commonly carried.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "volumeOfDangerousGoods": {
+          "title": "volumeOfDangerousGoods",
+          "description": "The volume of dangerous goods on the vehicle(s) reported in a traffic/travel situation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/CubicMetres"
+        },
+        "weightOfDangerousGoods": {
+          "title": "weightOfDangerousGoods",
+          "description": "The weight of dangerous goods on the vehicle(s) reported in a traffic/travel situation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/Tonnes"
+        },
+        "hazardousMaterialsExtensionG": {
+          "title": "hazardousMaterialsExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "chemicalName"
+      ]
+    },
+    "HeaderInformation": {
+      "title": "HeaderInformation",
+      "description": "Management information relating to the data contained within a publication.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "informationStatus": {
+          "title": "informationStatus",
+          "description": "The status of the related information (real, test, exercise ....).",
+          "$ref": "DATEXII_4_Common.json#/definitions/InformationStatusEnumG"
+        },
+        "headerInformationExtensionG": {
+          "title": "headerInformationExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "informationStatus"
+      ]
+    },
+    "HeaviestAxleWeightCharacteristic": {
+      "title": "HeaviestAxleWeightCharacteristic",
+      "description": "Weight characteristic of the heaviest axle on the vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "heaviestAxleWeight": {
+          "title": "heaviestAxleWeight",
+          "description": "The weight of the heaviest axle on the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/Tonnes"
+        },
+        "heaviestAxleWeightCharacteristicExtensionG": {
+          "title": "heaviestAxleWeightCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "heaviestAxleWeight"
+      ]
+    },
+    "HeightCharacteristic": {
+      "title": "HeightCharacteristic",
+      "description": "Height characteristic of a vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "vehicleHeight": {
+          "title": "vehicleHeight",
+          "description": "The height of the highest part, excluding antennae, of an individual vehicle above the road surface, in metres.",
+          "$ref": "DATEXII_4_Common.json#/definitions/MetresAsFloat"
+        },
+        "heightCharacteristicExtensionG": {
+          "title": "heightCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "vehicleHeight"
+      ]
+    },
+    "InformationStatusEnum": {
+      "title": "InformationStatusEnum",
+      "description": "Status of the related information (i.e. real, test or exercise).",
+      "type": "string",
+      "enum": [
+        "real",
+        "securityExercise",
+        "technicalExercise",
+        "test",
+        "extendedG"
+      ]
+    },
+    "InformationStatusEnumG": {
+      "title": "InformationStatusEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/InformationStatusEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "InternationalIdentifier": {
+      "title": "InternationalIdentifier",
+      "description": "An identifier/name whose range is specific to the particular country.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country": {
+          "title": "country",
+          "description": "EN ISO 3166-1 two-character country code.",
+          "$ref": "DATEXII_4_Common.json#/definitions/CountryCode"
+        },
+        "nationalIdentifier": {
+          "title": "nationalIdentifier",
+          "description": "Identifier or name unique within the specified country.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "internationalIdentifierExtensionG": {
+          "title": "internationalIdentifierExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "country",
+        "nationalIdentifier"
+      ]
+    },
+    "Language": {
+      "title": "Language",
+      "description": "A language datatype, identifies a specified language by an ISO 639-1 2-alpha code.",
+      "type": "string"
+    },
+    "LengthCharacteristic": {
+      "title": "LengthCharacteristic",
+      "description": "Length characteristic of a vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "vehicleLength": {
+          "title": "vehicleLength",
+          "description": "The overall distance between the front and back of an individual vehicle, including the length of any trailers, couplings, embedded features etc.",
+          "$ref": "DATEXII_4_Common.json#/definitions/MetresAsFloat"
+        },
+        "lengthCharacteristicExtensionG": {
+          "title": "lengthCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "vehicleLength"
+      ]
+    },
+    "LoadTypeEnum": {
+      "title": "LoadTypeEnum",
+      "description": "Types of load carried by a vehicle.",
+      "type": "string",
+      "enum": [
+        "abnormalLoad",
+        "ammunition",
+        "chemicals",
+        "combustibleMaterials",
+        "corrosiveMaterials",
+        "debris",
+        "empty",
+        "explosiveMaterials",
+        "extraHighLoad",
+        "extraLongLoad",
+        "extraWideLoad",
+        "fuel",
+        "glass",
+        "goods",
+        "hazardousMaterials",
+        "liquid",
+        "livestock",
+        "materials",
+        "materialsDangerousForPeople",
+        "materialsDangerousForTheEnvironment",
+        "materialsDangerousForWater",
+        "oil",
+        "ordinary",
+        "perishableProducts",
+        "petrol",
+        "pharmaceuticalMaterials",
+        "radioactiveMaterials",
+        "refrigeratedGoods",
+        "refuse",
+        "toxicMaterials",
+        "vehicles",
+        "other",
+        "extendedG"
+      ]
+    },
+    "LoadTypeEnumG": {
+      "title": "LoadTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/LoadTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "LowEmissionLevelEnum": {
+      "title": "LowEmissionLevelEnum",
+      "description": "The emission level of a vehicle.",
+      "type": "string",
+      "enum": [
+        "lowLevelEmission",
+        "freeOfEmission",
+        "extendedG"
+      ]
+    },
+    "LowEmissionLevelEnumG": {
+      "title": "LowEmissionLevelEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/LowEmissionLevelEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "MetresAsFloat": {
+      "title": "MetresAsFloat",
+      "description": "A measure of distance defined in metres in a floating point format.",
+      "$ref": "DATEXII_4_Common.json#/definitions/Float"
+    },
+    "MultilingualString": {
+      "title": "MultilingualString",
+      "description": "A multilingual string, whereby the same text may be expressed in more than one language.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/MultiLingualStringValue"
+          }
+        }
+      }
+    },
+    "MultiLingualStringValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "lang",
+        "value"
+      ]
+    },
+    "NonNegativeInteger": {
+      "title": "NonNegativeInteger",
+      "description": "An integer number whose value space is the set {0, 1, 2, ..., 2147483645, 2147483646, 2147483647}.",
+      "type": "integer",
+      "minimum": 0.0
+    },
+    "NumberOfAxlesCharacteristic": {
+      "title": "NumberOfAxlesCharacteristic",
+      "description": "Number of axles characteristic of a vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "numberOfAxles": {
+          "title": "numberOfAxles",
+          "description": "The total number of axles of an individual vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+        },
+        "numberOfAxlesCharacteristicExtensionG": {
+          "title": "numberOfAxlesCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "numberOfAxles"
+      ]
+    },
+    "OverallPeriod": {
+      "title": "OverallPeriod",
+      "description": "A continuous or discontinuous period of validity defined by overall bounding start and end times and the possible intersection of valid periods (potentially recurring) with the complement of exception periods (also potentially recurring).",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overallStartTime": {
+          "title": "overallStartTime",
+          "description": "Start of bounding period of validity defined by date and time.",
+          "$ref": "DATEXII_4_Common.json#/definitions/DateTime"
+        },
+        "overallPeriodExtensionG": {
+          "title": "overallPeriodExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "overallStartTime"
+      ]
+    },
+    "PayloadPublicationG": {
+      "title": "PayloadPublicationG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "versionG": {
+          "type": "string",
+          "default": "4.0"
+        },
+        "modelBaseVersionG": {
+          "type": "string",
+          "default": "4"
+        },
+        "extensionNameG": {
+          "type": "string"
+        },
+        "extensionVersionG": {
+          "type": "string"
+        },
+        "profileNameG": {
+          "type": "string"
+        },
+        "profileVersionG": {
+          "type": "string"
+        },
+        "sitSituationPublication": {
+          "$ref": "DATEXII_4_Situation.json#/definitions/SituationPublication"
+        }
+      },
+      "required": [
+        "modelBaseVersionG"
+      ]
+    },
+    "Reference": {
+      "title": "Reference",
+      "description": "A reference to an identifiable managed object where the identifier is unique.  It comprises an identifier (e.g. UUID) and a string identifying the class of the referenced object.",
+      "type": "object",
+      "properties": {
+        "idG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "idG"
+      ]
+    },
+    "String": {
+      "title": "String",
+      "description": "A character string whose value space is the set of finite-length sequences of characters. Every character has a corresponding Universal Character Set code point (as defined in ISO/IEC 10646), which is an integer.",
+      "type": "string"
+    },
+    "TemperatureCelsius": {
+      "title": "TemperatureCelsius",
+      "description": "A measure of temperature defined in degrees Celsius.",
+      "$ref": "DATEXII_4_Common.json#/definitions/Float"
+    },
+    "Tonnes": {
+      "title": "Tonnes",
+      "description": "A measure of weight defined in metric tonnes.",
+      "$ref": "DATEXII_4_Common.json#/definitions/Float"
+    },
+    "Validity": {
+      "title": "Validity",
+      "description": "Specification of validity, either explicitly or by a validity time period specification which may be discontinuous.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "validityStatus": {
+          "title": "validityStatus",
+          "description": "Specification of validity, either explicitly overriding the validity time specification or confirming it.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ValidityStatusEnumG"
+        },
+        "validityTimeSpecification": {
+          "title": "validityTimeSpecification",
+          "description": "A specification of periods of validity defined by overall bounding start and end times and the possible intersection of valid periods with exception periods (exception periods overriding valid periods).",
+          "$ref": "DATEXII_4_Common.json#/definitions/OverallPeriod"
+        },
+        "validityExtensionG": {
+          "title": "validityExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "validityStatus",
+        "validityTimeSpecification"
+      ]
+    },
+    "ValidityStatusEnum": {
+      "title": "ValidityStatusEnum",
+      "description": "Values of validity status that can be assigned to a described event, action or item.",
+      "type": "string",
+      "enum": [
+        "active",
+        "planned",
+        "suspended",
+        "definedByValidityTimeSpec",
+        "extendedG"
+      ]
+    },
+    "ValidityStatusEnumG": {
+      "title": "ValidityStatusEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/ValidityStatusEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "Vehicle": {
+      "title": "Vehicle",
+      "description": "Details of an individual vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "anonymizedVehicleReference": {
+          "title": "anonymizedVehicleReference",
+          "description": "A reference for a vehicle derived from vehicle properties such as registration number but encoded so that it does not allow a human to identify the vehicle directly from the encoded value",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "vehicleColour": {
+          "title": "vehicleColour",
+          "description": "The colour of the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/MultilingualString"
+        },
+        "vehicleCountryOfOrigin": {
+          "title": "vehicleCountryOfOrigin",
+          "description": "Specification of the country in which the vehicle is registered. The code is the 2-alpha code as given in EN ISO 3166-1 which is updated by the ISO 3166 Maintenance Agency.",
+          "$ref": "DATEXII_4_Common.json#/definitions/CountryCode"
+        },
+        "vehicleIdentifier": {
+          "title": "vehicleIdentifier",
+          "description": "A vehicle identification number (VIN) comprising 17 characters that is based on either ISO 3779 or ISO 3780 and uniquely identifies the individual vehicle. This is normally securely attached to the vehicle chassis.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "vehicleManufacturer": {
+          "title": "vehicleManufacturer",
+          "description": "Indicates the stated manufacturer of the vehicle, e.g. Ford.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "vehicleModel": {
+          "title": "vehicleModel",
+          "description": "Indicates the model (or range name) of the vehicle, e.g. Mondeo.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "vehicleRegistrationPlateIdentifier": {
+          "title": "vehicleRegistrationPlateIdentifier",
+          "description": "An identifier or code displayed on a vehicle registration plate attached to the vehicle used for official identification purposes. The registration identifier is numeric or alphanumeric and is unique within the issuing authority's region.",
+          "$ref": "DATEXII_4_Common.json#/definitions/String"
+        },
+        "vehicleStatus": {
+          "title": "vehicleStatus",
+          "description": "Vehicle status.",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleStatusEnumG"
+        },
+        "vehicleCharacteristics": {
+          "title": "vehicleCharacteristics",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleCharacteristics"
+        },
+        "axleSpacingOnVehicle": {
+          "title": "axleSpacingOnVehicle",
+          "description": "The spacing between axles on the vehicles.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/AxleSpacing"
+          },
+          "minItems": 0
+        },
+        "specificAxleWeight": {
+          "title": "specificAxleWeight",
+          "description": "The weight details relating to a specific axle on the vehicle.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/AxleWeight"
+          },
+          "minItems": 0
+        },
+        "hazardousGoodsAssociatedWithVehicle": {
+          "title": "hazardousGoodsAssociatedWithVehicle",
+          "description": "Details of hazardous goods carried by the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/HazardousMaterials"
+        },
+        "vehicleExtensionG": {
+          "title": "vehicleExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      }
+    },
+    "VehicleCharacteristics": {
+      "title": "VehicleCharacteristics",
+      "description": "The characteristics of a vehicle, e.g. lorry of gross weight greater than 30 tonnes.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fuelType": {
+          "title": "fuelType",
+          "description": "The type of fuel used by the vehicle.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/FuelTypeEnumG"
+          },
+          "minItems": 0
+        },
+        "loadType": {
+          "title": "loadType",
+          "description": "The type of load carried by the vehicle, especially in respect of hazardous loads.",
+          "$ref": "DATEXII_4_Common.json#/definitions/LoadTypeEnumG"
+        },
+        "vehicleEquipment": {
+          "title": "vehicleEquipment",
+          "description": "The type of equipment in use or on board the vehicle.",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleEquipmentEnumG"
+        },
+        "vehicleType": {
+          "title": "vehicleType",
+          "description": "Vehicle type.",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/VehicleTypeEnumG"
+          },
+          "minItems": 0
+        },
+        "vehicleUsage": {
+          "title": "vehicleUsage",
+          "description": "The type of usage of the vehicle (i.e. for what purpose is the vehicle being used).",
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleUsageEnumG"
+        },
+        "yearOfFirstRegistration": {
+          "title": "yearOfFirstRegistration",
+          "description": "Year of first registration of the vehicle",
+          "$ref": "DATEXII_4_Common.json#/definitions/Year"
+        },
+        "grossWeightCharacteristic": {
+          "title": "grossWeightCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/GrossWeightCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "heightCharacteristic": {
+          "title": "heightCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/HeightCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "lengthCharacteristic": {
+          "title": "lengthCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/LengthCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "widthCharacteristic": {
+          "title": "widthCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/WidthCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "heaviestAxleWeightCharacteristic": {
+          "title": "heaviestAxleWeightCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/HeaviestAxleWeightCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "numberOfAxlesCharacteristic": {
+          "title": "numberOfAxlesCharacteristic",
+          "type": "array",
+          "items": {
+            "$ref": "DATEXII_4_Common.json#/definitions/NumberOfAxlesCharacteristic"
+          },
+          "minItems": 0,
+          "maxItems": 2
+        },
+        "emissions": {
+          "title": "emissions",
+          "$ref": "DATEXII_4_Common.json#/definitions/Emissions"
+        },
+        "vehicleCharacteristicsExtensionG": {
+          "title": "vehicleCharacteristicsExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      }
+    },
+    "VehicleEquipmentEnum": {
+      "title": "VehicleEquipmentEnum",
+      "description": "Types of vehicle equipment in use or on board.",
+      "type": "string",
+      "enum": [
+        "notUsingSnowChains",
+        "notUsingSnowChainsOrTyres",
+        "snowChainsInUse",
+        "snowTyresInUse",
+        "snowChainsOrTyresInUse",
+        "withoutSnowTyresOrChainsOnBoard",
+        "extendedG"
+      ]
+    },
+    "VehicleEquipmentEnumG": {
+      "title": "VehicleEquipmentEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleEquipmentEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "VehicleStatusEnum": {
+      "title": "VehicleStatusEnum",
+      "description": "The status of a vehicle.",
+      "type": "string",
+      "enum": [
+        "abandoned",
+        "brokenDown",
+        "burntOut",
+        "damaged",
+        "damagedAndImmobilized",
+        "inDitch",
+        "jacknifed",
+        "offRoad",
+        "onFire",
+        "onTopOfCrashBarrier",
+        "onWheels",
+        "overturned",
+        "rollable",
+        "spunAround",
+        "extendedG"
+      ]
+    },
+    "VehicleStatusEnumG": {
+      "title": "VehicleStatusEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleStatusEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "VehicleTypeEnum": {
+      "title": "VehicleTypeEnum",
+      "description": "Types of vehicle.",
+      "type": "string",
+      "enum": [
+        "agriculturalVehicle",
+        "anyVehicle",
+        "articulatedBus",
+        "articulatedTrolleyBus",
+        "articulatedVehicle",
+        "bicycle",
+        "bus",
+        "car",
+        "caravan",
+        "carOrLightVehicle",
+        "carWithCaravan",
+        "carWithTrailer",
+        "constructionOrMaintenanceVehicle",
+        "fourWheelDrive",
+        "heavyGoodsVehicle",
+        "heavyGoodsVehicleWithTrailer",
+        "heavyDutyTransporter",
+        "heavyVehicle",
+        "highSidedVehicle",
+        "lightCommercialVehicle",
+        "largeCar",
+        "largeGoodsVehicle",
+        "lightCommercialVehicleWithTrailer",
+        "longHeavyLorry",
+        "lorry",
+        "metro",
+        "minibus",
+        "moped",
+        "motorcycle",
+        "motorcycleWithSideCar",
+        "motorhome",
+        "motorscooter",
+        "passengerCar",
+        "smallCar",
+        "tanker",
+        "threeWheeledVehicle",
+        "trailer",
+        "tram",
+        "trolleyBus",
+        "twoWheeledVehicle",
+        "van",
+        "vehicleWithCaravan",
+        "vehicleWithCatalyticConverter",
+        "vehicleWithoutCatalyticConverter",
+        "vehicleWithTrailer",
+        "withEvenNumberedRegistrationPlates",
+        "withOddNumberedRegistrationPlates",
+        "unknown",
+        "other",
+        "extendedG"
+      ]
+    },
+    "VehicleTypeEnumG": {
+      "title": "VehicleTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "VehicleUsageEnum": {
+      "title": "VehicleUsageEnum",
+      "description": "Types of usage of a vehicle.",
+      "type": "string",
+      "enum": [
+        "agricultural",
+        "carSharing",
+        "cityLogistics",
+        "commercial",
+        "emergencyServices",
+        "military",
+        "nonCommercial",
+        "patrol",
+        "recoveryServices",
+        "roadMaintenanceOrConstruction",
+        "roadOperator",
+        "taxi",
+        "extendedG"
+      ]
+    },
+    "VehicleUsageEnumG": {
+      "title": "VehicleUsageEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/VehicleUsageEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "VersionedReference": {
+      "title": "VersionedReference",
+      "description": "A reference to an identifiable version managed object where the combination of the identifier and version is unique. It comprises an identifier (e.g. UUID), a version (NonNegativeInteger) and a string identifying the class of the referenced object.",
+      "type": "object",
+      "properties": {
+        "idG": {
+          "type": "string"
+        },
+        "versionG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "idG"
+      ]
+    },
+    "WeightTypeEnum": {
+      "title": "WeightTypeEnum",
+      "description": "Type of weight - describing the meaning of a vehicle weight value",
+      "type": "string",
+      "enum": [
+        "actual",
+        "maximumPermitted",
+        "extendedG"
+      ]
+    },
+    "WeightTypeEnumG": {
+      "title": "WeightTypeEnumG",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "DATEXII_4_Common.json#/definitions/WeightTypeEnum"
+        },
+        "extendedValueG": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "WidthCharacteristic": {
+      "title": "WidthCharacteristic",
+      "description": "Width characteristic of a vehicle.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "comparisonOperator": {
+          "title": "comparisonOperator",
+          "description": "The operator to be used in the vehicle characteristic comparison operation.",
+          "$ref": "DATEXII_4_Common.json#/definitions/ComparisonOperatorEnumG"
+        },
+        "vehicleWidth": {
+          "title": "vehicleWidth",
+          "description": "The maximum width of an individual vehicle, including any features embedded or fixed on it, in metres.",
+          "$ref": "DATEXII_4_Common.json#/definitions/MetresAsFloat"
+        },
+        "widthCharacteristicExtensionG": {
+          "title": "widthCharacteristicExtensionG",
+          "$ref": "DATEXII_4_Common.json#/definitions/ExtensionTypeG"
+        }
+      },
+      "required": [
+        "comparisonOperator",
+        "vehicleWidth"
+      ]
+    },
+    "Year": {
+      "title": "Year",
+      "description": "A year.",
+      "$ref": "DATEXII_4_Common.json#/definitions/NonNegativeInteger"
+    }
+  }
+}
