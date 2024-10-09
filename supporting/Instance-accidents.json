@@ -1,0 +1,615 @@
+{
+	"payload": {
+		"modelBaseVersionG": "4",
+		"sitSituationPublication": {
+			"publicationCreator": {
+				"country": "de",
+				"nationalIdentifier": "test"
+			},
+			"publicationTime": "2024-09-16T09:56:45.733515+02:00",
+			"lang": "en",
+			"situation": [
+				{
+					"idG": "8f18238e6dadda9-SE",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:50:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:50:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:50:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 53.476531,
+												"longitude": -2.328261
+											},
+											"bearing": 296
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1951b098b1345-WNW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:50:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:50:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:50:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 53.476531,
+												"longitude": -2.328261
+											},
+											"bearing": 296
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1fae418a2420b-E",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:45:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T07:52:44.616392+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:45:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 49.562287,
+												"longitude": 7.860133
+											},
+											"bearing": 83
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f182a658046a64-ENE",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:45:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:45:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:45:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 51.6212,
+												"longitude": -8.89846
+											},
+											"bearing": 65
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1f1d4ab534953-NW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:42:17.733+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:42:17.733+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:42:17.733+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 52.555438,
+												"longitude": 13.356325
+											},
+											"bearing": 313
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1ea24e1a0ad4a-NW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:41:12.622+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:41:12.622+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:41:12.622+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 43.471114,
+												"longitude": 11.044834
+											},
+											"bearing": 325
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f3969c8ad8b16e-E",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:40:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:40:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:40:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 43.471114,
+												"longitude": 6.233063
+											},
+											"bearing": 94
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f194e685066016-N",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:37:34.527+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:37:34.527+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:37:34.527+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 51.591956,
+												"longitude": 0.069235
+											},
+											"bearing": 6
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f3925cd6b322e6-ESE",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:35:12.816+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:35:12.816+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:35:12.816+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 43.304471,
+												"longitude": -8.380101
+											},
+											"bearing": 106
+										}
+									}
+								},
+								"accidentType": [ { "value": "accidentInvolvingHazardousMaterials" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1865901ce10d1-SW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:35:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:35:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:35:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 49.53424835,
+												"longitude": 0.96880555
+											},
+											"bearing": 225
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f195b4e53a8515-NNW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:35:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:35:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:35:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 50.735487,
+												"longitude": -3.681348
+											},
+											"bearing": 344
+										}
+									}
+								},
+								"accidentType": [ { "value": "accidentInvolvingHazardousMaterials" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1952d5d4eb320-E",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-09-16T09:30:00+02:00",
+								"situationRecordVersionTime": "2024-09-16T09:30:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:30:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 54.554483,
+												"longitude": -6.027241
+											},
+											"bearing": 99
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1e05b4a2e9616-SSE",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-07-24T18:30:00+02:00",
+								"situationRecordVersionTime": "2024-06-15T10:57:01.490881+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-09-16T09:30:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 50.004446,
+												"longitude": 19.843542
+											},
+											"bearing": 166
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f182e15158c299-ESE",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-07-19T12:30:00+02:00",
+								"situationRecordVersionTime": "2024-07-19T12:30:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-07-19T12:30:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 53.105097,
+												"longitude": -8.024696
+											},
+											"bearing": 117
+										}
+									}
+								},
+								"accidentType": [ { "value": "accidentInvolvingHazardousMaterials" } ]
+							}
+						}
+					]
+				},
+				{
+					"idG": "8f1969caeaf461b-SW",
+					"headerInformation": {
+						"informationStatus": {
+							"value": "test"
+						}
+					},
+					"situationRecord": [
+						{
+							"sitAccident": {
+								"situationRecordCreationTime": "2024-07-17T23:00:00+02:00",
+								"situationRecordVersionTime": "2024-07-17T23:00:00+02:00",
+								"probabilityOfOccurrence": {
+									"value": "certain"
+								},
+								"safetyRelatedMessage": true,
+								"validity": {
+									"validityStatus": {
+										"value": "definedByValidityTimeSpec"
+									},
+									"validityTimeSpecification": {
+										"overallStartTime": "2024-07-17T23:00:00+02:00"
+									}
+								},
+								"locationReference": {
+									"locPointLocation": {
+										"pointByCoordinates": {
+											"pointCoordinates": {
+												"latitude": 52.445859,
+												"longitude": 5.0439
+											},
+											"bearing": 215
+										}
+									}
+								},
+								"accidentType": [ { "value": "accident" } ]
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}
