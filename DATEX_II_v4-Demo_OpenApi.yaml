@@ -1,0 +1,65 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI Demo - DATEX II User Forum 2024
+  version: v1.0
+servers:
+  - url: https://v4futureapi.azurewebsites.net/
+paths:
+  /GetAccidentsByRadius:
+    get:
+      parameters:
+        - name: accidentType
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [accident, accidentInvolvingHazardousMaterials]
+          description: Type of the accident which is searched for.
+        - name: latitude
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+          description: Degree of latitude of the accident site.
+        - name: longitude
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+          description: Degree of longitude of the accident site.
+        - name: radius
+          in: query
+          required: true
+          schema:
+            type: number
+            format: float
+      responses:
+        '200':
+          description: Data was successfully pulled
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: "#/components/schemas/Accident"
+          headers:
+            Content-Encoding:
+              description: The response is always gzip compressed.
+              schema:
+                type: string
+                enum:
+                  - gzip
+        '400':
+          description: Bad request
+        '403':
+          description: Forbidden
+        '404':
+          description: Not found
+        '406':
+          description: Not Acceptable
+components:
+  schemas:
+    Accident:
+      $ref: DATEXII_4_Situation.json#/definitions/Accident
