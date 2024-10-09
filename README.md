@@ -11,7 +11,8 @@ and the participants are engaged to bring in their own ideas for the future deve
 
 
 To reproduce the step-by-step-procedure, the following software is necessary:
-* JAVA: https://www.oracle.com/in/java/technologies/downloads/ 
+* Jupyter Notebook: https://jupyter.org/install
 * Python: https://www.python.org/downloads/
 * OpenAPI Generator: https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar
-* Jupyter Notebook:
+* JAVA (for OpenAPI generation): https://www.oracle.com/in/java/technologies/downloads/ 
+
