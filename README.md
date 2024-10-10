@@ -12,6 +12,8 @@ and the participants are engaged to bring in their own ideas for the future deve
 Intructions:
 * Install Jupyter Notebook: https://jupyter.org/install
 * Copy the two files from the repository into the <code>Jupyter</code> folder of your jupiter-installation:<br> The Jupyter Notebook file (.ipynb) and the YAML-File
+  <br>
+  It is not necessary to copy any files from the <code>supporting</code> folder.
 * Download this OpenAPI Generator file into the same folder:<br> https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar<br>
   (Note: You need a Java installation to run this later)
 * And of course you need Python to be installed (e.g. https://www.python.org/downloads/)
