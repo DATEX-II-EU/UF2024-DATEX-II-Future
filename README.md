@@ -16,5 +16,5 @@ Intructions:
   (Note: You need a Java installation to run this later)
 * And of course you need Python to be installed (e.g. https://www.python.org/downloads/)
 * Now run from command line: <code>jupyter notebook</code>. It will open jupyter in your browser.
-* Browse into the <codeJupyter</code> folder and open the <code>DATEX_II_v4-Demo.ipynb</code> notebook.
+* Browse into the <code>Jupyter</code> folder and open the <code>DATEX_II_v4-Demo.ipynb</code> notebook.
 * Follow the further steps in the notebook.
