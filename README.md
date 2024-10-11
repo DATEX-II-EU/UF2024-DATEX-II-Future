@@ -17,9 +17,9 @@ https://v4futureapi.azurewebsites.net/GetAccidentsByRadius?accidentType=accident
 
 <i>Demo limitation: The parameter accidentType is not mandatory, but in order to get results, it must be present as shown above. There is no filtering on accident types, i.e. all kind of accident types (here in the demo: 2 different types) are returned.</i>
 
-# Client-side code generation with Java (using Jupyter Notebook)
+# Client-side code generation in Python (using Jupyter Notebook)
 
-In the Jupyter Notebook, there are instruction to create the necessary code with OpenAPI generator and some python code fragments to request accident information from the demo server (filtered by coordinates and radius). The resulting accidents are displayed on a map.
+In the Jupyter Notebook, there are instruction to create the necessary code with OpenAPI generator and some Python code fragments to request accident information from the demo server (filtered by coordinates and radius). The resulting accidents are displayed on a map.
 
 Intructions:
 * Install Jupyter Notebook: https://jupyter.org/install
