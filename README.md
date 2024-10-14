@@ -21,7 +21,7 @@ https://v4futureapi.azurewebsites.net/GetAccidentsByRadius?accidentType=accident
 
 In the Jupyter Notebook, there are instruction to create the necessary code with OpenAPI generator and some Python code fragments to request accident information from the demo server (filtered by coordinates and radius). The resulting accidents are displayed on a map.
 
-Intructions:
+Instructions:
 * Install Jupyter Notebook: https://jupyter.org/install
 * Copy the two files from the repository into the <code>Jupyter</code> folder of your jupiter-installation:<br> The Jupyter Notebook file (.ipynb) and the YAML-File
   <br>
